@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Mock Data for Restaurants
 const RESTAURANTS = [
   {
     id: 1,
@@ -34,6 +33,39 @@ const RESTAURANTS = [
     tags: ["Healthy", "Salads", "Quiet Place"],
     image: "🥗",
     matchScore: "89% AI Match"
+  },
+  {
+    id: 4,
+    name: "Kababjees Highway",
+    cuisine: "BBQ & Traditional",
+    rating: 4.7,
+    reviews: 412,
+    price: "$$$",
+    tags: ["Sajji", "Karahi", "Family Dining"],
+    image: "🍖",
+    matchScore: "94% AI Match"
+  },
+  {
+    id: 5,
+    name: "Big Bash Burgers",
+    cuisine: "American Fast Food",
+    rating: 4.6,
+    reviews: 210,
+    price: "$$",
+    tags: ["Smashed Burger", "Fries", "Crispy"],
+    image: "🍔",
+    matchScore: "91% AI Match"
+  },
+  {
+    id: 6,
+    name: "Dhaba Lounge",
+    cuisine: "Chai & Street Food",
+    rating: 4.4,
+    reviews: 155,
+    price: "$",
+    tags: ["Karak Chai", "Paratha", "Open Air"],
+    image: "☕",
+    matchScore: "87% AI Match"
   }
 ];
 
@@ -62,12 +94,10 @@ export default function RestaurantsPage() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {RESTAURANTS.map((algo) => (
           <div key={algo.id} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
-            {/* Visual Block Placeholder */}
             <div className="bg-orange-50 h-48 flex items-center justify-center text-6xl select-none">
               {algo.image}
             </div>
             
-            {/* Card Content Matrix */}
             <div className="p-5 flex flex-col flex-grow">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-bold px-2 py-1 bg-green-50 text-green-700 rounded-full border border-green-200">
@@ -79,7 +109,6 @@ export default function RestaurantsPage() {
               <h3 className="text-lg font-bold text-gray-900 mb-1">{algo.name}</h3>
               <p className="text-xs text-gray-500 mb-4 font-mono">{algo.cuisine}</p>
               
-              {/* Tags Primitives */}
               <div className="flex flex-wrap gap-1 mb-5">
                 {algo.tags.map((tag, idx) => (
                   <span key={idx} className="bg-gray-100 text-gray-600 text-[10px] px-2 py-0.5 rounded">
@@ -88,7 +117,6 @@ export default function RestaurantsPage() {
                 ))}
               </div>
 
-              {/* Card Footer Metric */}
               <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-600">
                 <div className="flex items-center space-x-1">
                   <span className="text-orange-500 font-bold">★ {algo.rating}</span>
