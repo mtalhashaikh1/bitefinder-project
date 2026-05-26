@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Standard Next.js Link router import
 
 export default function Footer() {
   return (
@@ -7,13 +8,20 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-xl font-semibold text-orange-500 font-mono">BiteFinder AI</span>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-400 sm:mb-0">
-            <li><a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Contact Support</a></li>
+            <li>
+              <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
+            </li>
+            <li>
+              {/* 🔥 Link ko href="/contact" ke sath map kar diya */}
+              <Link href="/contact" className="hover:underline cursor-pointer">
+                Contact Support
+              </Link>
+            </li>
           </ul>
         </div>
         <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
         <span className="block text-sm text-gray-400 sm:text-center">
-          © 2026 BiteFinder AI. Developed for AI Practical Project Assignment. All Rights Reserved.
+          © 2026 BiteFinder AI. Developed for AI Project. All Rights Reserved.
         </span>
       </div>
     </footer>
