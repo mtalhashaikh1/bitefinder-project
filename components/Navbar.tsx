@@ -42,12 +42,15 @@ export default function Navbar() {
         </div>
 
         {/* Right Side: Ask AI */}
-        <a 
-          href="#ai-chatbot" 
-          className="bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all shadow-sm"
-        >
-          Ask AI Chatbot
-        </a>
+        {/* Right Side: Ask AI */}
+<button 
+  onClick={() => {
+    window.dispatchEvent(new Event('open-bitefinder-chat'));
+  }}
+  className="bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all shadow-sm cursor-pointer outline-none border-none"
+>
+  Ask AI Chatbot
+</button>
       </div>
     </nav>
   );

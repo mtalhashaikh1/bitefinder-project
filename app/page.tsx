@@ -1,6 +1,26 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+
+  // Common redirect function for query mapping
+  const handleSearchExecution = (searchQuery: string) => {
+    if (!searchQuery.trim()) {
+      router.push('/restaurants');
+    } else {
+      router.push(`/restaurants?search=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSearchExecution(query);
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -18,23 +38,43 @@ export default function Home() {
             </p>
             
             {/* AI Search Hub Component */}
-            <div className="mt-10 max-w-xl mx-auto bg-white p-2 rounded-xl shadow-lg border border-gray-200 flex flex-col sm:flex-row gap-2">
+            <form onSubmit={handleFormSubmit} className="mt-10 max-w-xl mx-auto bg-white p-2 rounded-xl shadow-lg border border-gray-200 flex flex-col sm:flex-row gap-2">
               <input 
                 type="text" 
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder="Try: 'Spicy chicken biryani near Karachi with clean seating'..." 
-                className="w-full px-4 py-3 text-gray-700 bg-transparent rounded-lg focus:outline-none placeholder-gray-400 text-sm sm:text-base"
+                className="w-full px-4 py-3 text-gray-700 bg-transparent rounded-lg focus:outline-none placeholder-gray-400 text-sm sm:text-base text-gray-800"
               />
-              <button className="w-full sm:w-auto rounded-lg bg-orange-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 transition-colors shrink-0">
+              <button 
+                type="submit" 
+                className="w-full sm:w-auto rounded-lg bg-orange-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 transition-colors shrink-0 cursor-pointer"
+              >
                 Search AI
               </button>
-            </div>
+            </form>
 
             {/* Quick Suggestions Matrix */}
             <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs text-gray-500">
               <span className="font-medium text-gray-700">Popular queries:</span>
-              <button className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50">Cheesy Pizza</button>
-              <button className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50">Hyderabadi Haleem</button>
-              <button className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50">Outdoor Dining</button>
+              <button 
+                onClick={() => handleSearchExecution('Cheesy Pizza')} 
+                className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50 cursor-pointer transition-colors"
+              >
+                Cheesy Pizza
+              </button>
+              <button 
+                onClick={() => handleSearchExecution('Hyderabadi Haleem')} 
+                className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50 cursor-pointer transition-colors"
+              >
+                Hyderabadi Haleem
+              </button>
+              <button 
+                onClick={() => handleSearchExecution('Outdoor Dining')} 
+                className="hover:text-orange-600 border border-gray-200 px-2 py-0.5 rounded bg-gray-50 cursor-pointer transition-colors"
+              >
+                Outdoor Dining
+              </button>
             </div>
           </div>
         </div>
