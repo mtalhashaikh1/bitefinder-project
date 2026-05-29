@@ -2,14 +2,22 @@
 
 BiteFinder AI is a complete, functional website developed using AI-powered development tools and modern web technologies. This platform empowers food enthusiasts to discover highly contextualized restaurant information through structural AI architectures and optimized RAG vector pipelines.
 
+-----------------------------------------------
+Group info:
+Member1: Muhammad Talha Shaikh (BSE-23S-143)
+Member2: Muhammad Saqib Qayyum (BSE-23S-142)
+
+SECTION: SE7C
+COURSE: Artificial Intelligence
+DATE: 31 MAY 2026
 Developed for the **Artificial Intelligence** course under the guidance of **Ma’am Mahnoor**.
 
----
+-----------------------------------------------
 
 ## 🔗 Submission Links
-- **Deployed Website (Vercel):** [PASTE_YOUR_VERCEL_LINK_HERE]
+- **Deployed Website (Vercel):** [https://bitefinder-project.vercel.app/]
 - **Demo Video Link:** [PASTE_YOUR_YOUTUBE_OR_DRIVE_LINK_HERE]
-- **GitHub Repository:** [PASTE_YOUR_GITHUB_REPO_LINK_HERE]
+- **GitHub Repository:** [https://github.com/mtalhashaikh1/bitefinder-project]
 
 ---
 
@@ -21,8 +29,8 @@ Developed for the **Artificial Intelligence** course under the guidance of **Ma�
 ### 2. Conversational RAG Chatbot Engagement
 ![Contextual Chat Interface](./public/images/chatbot-active.png)
 
-### 3. Responsive Mobile Architecture
-![Mobile Layout Fluidity](./public/images/responsive-mobile.png)
+### 3. Explore Restuarant Page
+![Restuarant Detail intro Page](./public/images/restuarantpage.png)
 
 ---
 
@@ -71,6 +79,8 @@ bitefinder-project/
 │   └── plan.md                # Phase breakdown and features checklist
 ├── app/                       # Next.js App Router Structure
 │   ├── about/                 # About application view   page
+│   ├── api/chat
+│       └── route.ts
 │   ├── contact/         
 │   ├── restaurants/           # Specialized dynamic routes
 │   ├── global.css             # Root global css
