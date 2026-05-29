@@ -19,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} pt-16 bg-gray-50 min-h-screen flex flex-col`}>
+      <body className={`${inter.className} pt-16 bg-gray-50 min-h-screen flex flex-col`}
+      suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow">
           {children}
