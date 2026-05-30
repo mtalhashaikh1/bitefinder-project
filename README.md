@@ -16,7 +16,7 @@ Developed for the **Artificial Intelligence** course under the guidance of **Maâ
 
 ## ðŸ”— Submission Links
 - **Deployed Website (Vercel):** [https://bitefinder-project.vercel.app/]
-- **Demo Video Link:** [PASTE_YOUR_YOUTUBE_OR_DRIVE_LINK_HERE]
+- **Demo Video Link:** [https://drive.google.com/drive/folders/1xI9JaS7GeKXmuXnHda9cXlR4zWq4AZUH]
 - **GitHub Repository:** [https://github.com/mtalhashaikh1/bitefinder-project]
 
 ---
